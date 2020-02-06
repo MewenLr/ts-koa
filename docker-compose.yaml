@@ -1,0 +1,22 @@
+version: "3"
+services:
+  mongo:
+    container_name: mongo
+    build:
+      context: ./src/config/mongo
+    ports:
+      - 27017:27017
+
+  node:
+    container_name: node
+    build: .
+    volumes:
+      - ./:/server
+    ports:
+      - 3030:3030
+    links:
+      - mongo
+    command:
+      - /bin/sh
+      - -c
+      - npm i && npm run dev
