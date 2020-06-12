@@ -16,11 +16,11 @@
     "test": "sudo chown $USER:$USER -R ./node_modules/.cache/mongodb-memory-server/mongodb-binaries && jest --detectOpenHandles --forceExit"
   },
   "dependencies": {
+    "@koa/cors": "*",
     "bcryptjs": "*",
     "jsonwebtoken": "*",
     "koa": "*",
     "koa-bodyparser": "*",
-    "koa-cors": "*",
     "koa-helmet": "*",
     "koa-i18n": "*",
     "koa-jwt": "*",
